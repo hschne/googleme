@@ -4,15 +4,18 @@ require 'cgi'
 
 module Gitme
   class Server
+    def initialize(state)
+      @state = state
+    end
+
     def start
       server = TCPServer.new 9876
-
-      puts 'Waiting for request...'
       while connection = server.accept
         request = connection.gets
-        handle(request)
+        data = handle(request)
         connection.puts "Hello world! The time is #{Time.now}"
         connection.close
+        return data if data
       end
     end
 
@@ -25,7 +28,7 @@ module Gitme
       when '/authorize'
         handle_authorize(full_path)
       else
-        puts 'nothing'
+        puts 'Invalid request received'
       end
     end
 
@@ -33,6 +36,7 @@ module Gitme
       params = CGI.parse(URI.parse(full_path).query)
       puts "Path is #{full_path}"
       puts "Params is #{params}"
+      params['code'][0]
     end
   end
 end

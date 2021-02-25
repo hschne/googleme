@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "thor", "~> 1.1"
+  spec.add_dependency "launchy", "~> 2.5"
 end
