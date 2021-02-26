@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 1.1"
   spec.add_dependency "launchy", "~> 2.5"
   spec.add_dependency "octokit", "~> 4.0"
+  spec.add_dependency "awesome_print", "~> 1.8"
 end

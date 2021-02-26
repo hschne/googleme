@@ -28,11 +28,26 @@ module Gitme
       request.body = @params.map{ |x,v| "#{x}=#{v}" }.reduce{|x,v| "#{x}&#{v}" }
       response = http.request(request)
 
+      puts response.body
       if response.code == '200'
         JSON.parse(response.body)['access_token']
       else
         raise(Error, "Invalid token response, got #{response.code}")
       end
+    end
+
+    def gh_token
+      url = URI("https://#{@domain}/api/v2/users/USER_ID")
+
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      request = Net::HTTP::Get.new(url)
+      request["authorization"] = 'Bearer YOUR_ACCESS_TOKEN'
+
+      response = http.request(request)
+      puts response.read_body
     end
   end
 end

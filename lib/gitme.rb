@@ -10,6 +10,7 @@ require 'thor'
 require 'securerandom'
 require 'digest'
 require 'octokit'
+require 'awesome_print'
 
 module Gitme
   class Error < Thor::Error; end
@@ -40,14 +41,14 @@ module Gitme
       Store.new.put(access_token)
     end
 
-    desc 'userr', 'Get data for the currently logged in user'
+    desc 'user', 'Get data for the currently logged in user'
     def user
       access_token = Store.new.get
       raise(Error, 'No access token found, please login first') unless access_token
       puts access_token
 
       client = Octokit::Client.new(access_token: access_token)
-      say client.user
+      ap client.user.to_h
     rescue Octokit::Error => e
       raise(Error, e.message)
     end

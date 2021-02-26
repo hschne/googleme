@@ -13,7 +13,7 @@ module Gitme
           code_challenge: code_challenge,
           client_id: @client_id,
           redirect_uri: 'http://localhost:9876/authorize',
-          scope: 'profile',
+          scope: 'openid user',
           state: state
       }
     end

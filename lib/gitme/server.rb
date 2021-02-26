@@ -34,8 +34,6 @@ module Gitme
 
     def handle_authorize(full_path)
       params = CGI.parse(URI.parse(full_path).query)
-      puts "Path is #{full_path}"
-      puts "Params is #{params}"
       params['code'][0]
     end
   end
