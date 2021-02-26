@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require_relative "lib/gitme/version"
+require_relative "lib/goggleme/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "gitme"
-  spec.version       = Gitme::VERSION
+  spec.name          = "goggleme"
+  spec.version       = Goggleme::VERSION
   spec.authors       = ["hschne"]
   spec.email         = ["hans.schnedlitz@gmail.com"]
 
   spec.summary       = "Gitme demonstrates how to use Oauth in a Thor CLI app."
   spec.description   = "A demo application for oauth"
-  spec.homepage      = "https://github.com/hschne/gitme"
+  spec.homepage      = "https://github.com/hschne/goggleme"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/hschne/gitme"
+  spec.metadata["source_code_uri"] = "https://github.com/hschne/goggleme"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

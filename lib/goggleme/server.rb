@@ -2,7 +2,7 @@ require 'socket'
 require 'uri'
 require 'cgi'
 
-module Gitme
+module Goggleme
   class Server
     def initialize(state)
       @state = state

@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'json'
 
-module Gitme
+module Goggleme
   class Client
     def self.token(code_verifier, code)
       base = "https://oauth2.googleapis.com/token"
@@ -11,7 +11,7 @@ module Gitme
           code_verifier: code_verifier,
           code: code,
           client_id: '591376582274-ctrjhsj8fjjhn4pk1rknfvcfhrcc3af7.apps.googleusercontent.com',
-          client_secret: '0QRnsCcaZtb7TwnXrul39gmg',
+          client_secret: 'cZAXyEkeV9kZNmDQyZsNLHaj',
           redirect_uri: 'http://localhost:9876/authorize',
       }
       url = URI(base)

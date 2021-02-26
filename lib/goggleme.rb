@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require_relative "gitme/version"
-require_relative "gitme/server"
-require_relative "gitme/browser"
-require_relative "gitme/client"
-require_relative "gitme/store"
+require_relative "goggleme/version"
+require_relative "goggleme/server"
+require_relative "goggleme/browser"
+require_relative "goggleme/client"
+require_relative "goggleme/store"
 
 require 'thor'
 require 'securerandom'
 require 'digest'
 require 'amazing_print'
 
-module Gitme
+module Goggleme
   class Error < Thor::Error; end
 
   class Main < Thor

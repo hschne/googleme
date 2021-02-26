@@ -1,6 +1,6 @@
 require 'launchy'
 
-module Gitme
+module Goggleme
   class Browser
     def initialize(code_challenge, state)
       @base = "https://accounts.google.com/o/oauth2/v2/auth"

@@ -1,9 +1,9 @@
 require 'json'
 
-module Gitme
+module Goggleme
   class Store
     def initialize
-      @path = File.join(Dir.home, '.gitme')
+      @path = File.join(Dir.home, '.goggleme')
     end
 
     def put(data)
