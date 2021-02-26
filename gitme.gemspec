@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
   spec.add_dependency "thor", "~> 1.1"
   spec.add_dependency "launchy", "~> 2.5"
+  spec.add_dependency "octokit", "~> 4.0"
 end

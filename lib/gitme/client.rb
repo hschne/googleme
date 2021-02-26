@@ -1,5 +1,6 @@
 require 'uri'
 require 'net/http'
+require 'json'
 
 module Gitme
   class Client
@@ -27,8 +28,11 @@ module Gitme
       request.body = @params.map{ |x,v| "#{x}=#{v}" }.reduce{|x,v| "#{x}&#{v}" }
       response = http.request(request)
 
-      puts response.code
-      puts response.message
+      if response.code == '200'
+        JSON.parse(response.body)['access_token']
+      else
+        raise(Error, "Invalid token response, got #{response.code}")
+      end
     end
   end
 end
