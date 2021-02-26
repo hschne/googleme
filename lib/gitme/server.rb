@@ -22,7 +22,7 @@ module Gitme
     private
 
     def handle(request)
-      method, full_path = request.split(' ')
+      _, full_path = request.split(' ')
       path = URI(full_path).path
       case path
       when '/authorize'

@@ -6,16 +6,16 @@ module Gitme
       @path = File.join(Dir.home, '.gitme')
     end
 
-    def put(token)
+    def put(data)
       File.open(@path, "w") do |f|
-        f.write token
+        f.write data.to_json
       end
     end
 
     def get
       return unless File.file?(@path)
 
-      File.read(@path)
+      JSON.parse(File.read(@path))
     end
   end
 end
