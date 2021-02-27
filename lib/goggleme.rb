@@ -52,8 +52,8 @@ module Goggleme
       end
 
       server.join
-      code = server.value
 
+      code = server.value
       uri = URI('https://oauth2.googleapis.com/token')
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -91,7 +91,6 @@ module Goggleme
       raise(Error, 'No access token found, please login first') unless data
 
       access_token = data['access_token']
-
       uri = URI('https://www.googleapis.com/oauth2/v1/userinfo?alt=json')
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
