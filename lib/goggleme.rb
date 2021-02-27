@@ -102,19 +102,5 @@ module Goggleme
 
       ap JSON.parse(response.body)
     end
-
-    no_commands do
-      def generate_code_verifier
-        urlsafe_base64('')
-      end
-
-      def generate_pkce_challenge(code_verifier)
-        urlsafe_base64((code_verifier))
-      end
-
-      def urlsafe_base64(base64_str)
-        base64_str
-      end
-    end
   end
 end
