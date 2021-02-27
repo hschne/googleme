@@ -20,10 +20,6 @@ module Goggleme
       true
     end
 
-    def self.report_on_exception?
-      false
-    end
-
     desc 'login', 'Log in with Google'
 
     def login
